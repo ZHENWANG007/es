@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ems.mapper.EmpMapper">
+
+    <insert id="addEmpRole">
+        insert into emp_role(emp_id, role_id) values
+        <foreach collection="empIds" item="empId" separator=",">
+            (#{empId}, 4)
+        </foreach>
+    </insert>
+
+    <update id="updateEmpStatusByDeptIds">
+        update emp set status = #{status} where dept_id in
+        <foreach collection="deptIds" item="deptId" open="(" close=")" separator=",">
+            #{deptId}
+        </foreach>
+    </update>
+
+    <delete id="deleteEmpRole">
+        delete from emp_role where emp_id in
+        <foreach collection="empIds" item="empId" open="(" close=")" separator=",">
+            #{empId}
+        </foreach>
+    </delete>
+</mapper>

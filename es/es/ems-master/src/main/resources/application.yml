@@ -1,0 +1,102 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ems
+  # 数据库连接信息
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/etest?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+      username: root
+      password: 123456
+      initialSize: 5
+      minIdle: 5
+      maxActive: 40
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.css,*.gif,*.jpg,*.bmp,*.png,*.ico
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: 123456
+  # redis配置
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password:
+      database: 9 # 默认值为0
+  # 缓存配置
+  cache:
+    type: redis
+    redis:
+      time-to-live: 7200000  # 设置缓存过期时间为2小时（7200000毫秒）
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# 阿里云OSS
+aliyun:
+  oss:
+    endpoint: your_endpoint
+    access-key-id: your_access_key_id
+    access-key-secret: your_access_key_secret
+    bucket-name: your_bucket_name
+
+jwt:
+  secret-key: jyh # jwt签名加密秘钥
+  ttl: 7200000 # jwt过期时间
+  token-name: Authorization # 前端传递过来的令牌名称
+
+
+# MP配置
+mybatis-plus:
+  type-aliases-package: com.stp.domain.pojo # 别名扫描包
+  mapper-locations: "classpath*:/mapper/**/*.xml" # Mapper.xml文件地址，默认值
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 使用标准输出作为日志记录
+    map-underscore-to-camel-case: true # 是否开启下划线和驼峰的映射
+  global-config:
+    db-config:
+      id-type: auto
+
+# spring事务管理日志
+logging:
+  level:
+    com.stp.mapper: debug
+    com.stp.service: info
+    com.stp.controller: info
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'ems-user'
+      #      paths-to-match: '/user/**' # 路径分组
+      packages-to-scan: com.ems.controller.user  # 扫描用户相关的包
+    - group: 'ems-admin'
+      packages-to-scan: com.ems.controller.admin  # 扫描管理员相关的包
+
+# knife4j配置
+knife4j:
+  enable: true # 是否启用增强设置
+  production: false # 开启生产环境屏蔽
+  # 是否启用登录认证
+  basic:
+    enable: false
+    username: admin
+    password: 123456
+  setting:
+    language: zh_cn
+    enable-version: true
+    enable-swagger-models: true
+
+

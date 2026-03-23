@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ems.mapper.AttendanceMapper">
+
+    <select id="getExceptionCount" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT e.id)
+        FROM emp e
+        LEFT JOIN attendance a ON e.id = a.emp_id
+        WHERE a.attendance_date = #{today}
+        AND (
+            a.late_flag = 1
+            OR a.early_flag = 1
+            OR a.absent_flag = 1
+        )
+    </select>
+
+</mapper>

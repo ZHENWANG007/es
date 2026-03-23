@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ems.mapper.RoleMapper">
+
+    <insert id="addRoleMenus">
+        insert into role_menu(role_id, menu_id) values
+        <foreach collection="menuIds" item="menuId" separator=",">
+            (#{roleId}, #{menuId})
+        </foreach>
+    </insert>
+
+    <delete id="deleteRoleMenuByRoleIds">
+        delete from role_menu where role_id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="getRoleKeyByEmpId" resultType="java.lang.String" parameterType="java.lang.Long">
+        select r.role_key from role r
+        left join emp_role er on r.id = er.role_id
+        left join emp e on er.emp_id = e.id
+        where e.id = #{empId}
+    </select>
+</mapper>
