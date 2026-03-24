@@ -32,6 +32,9 @@
 | 系统管理       | 角色管理、菜单管理           |
 | 通用能力       | 数据列表分页、条件筛选       |
 
+## 功能截图
+
+<img width="1823" height="905" alt="屏幕截图 2026-03-24 152639" src="https://github.com/user-attachments/assets/6610fbc0-fc8d-4177-afb6-59c86cdc6886" />
 
 
 ## 环境要求
