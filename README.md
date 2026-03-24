@@ -36,6 +36,8 @@
 
 <img width="1823" height="905" alt="屏幕截图 2026-03-24 152639" src="https://github.com/user-attachments/assets/6610fbc0-fc8d-4177-afb6-59c86cdc6886" />
 
+<img width="1827" height="871" alt="屏幕截图 2026-03-24 152823" src="https://github.com/user-attachments/assets/d71c7fec-c50f-4356-a89d-b218ece61ed8" />
+
 
 ## 环境要求
 - JDK 8+
