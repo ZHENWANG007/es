@@ -33,10 +33,9 @@
 | 通用能力       | 数据列表分页、条件筛选       |
 
 ## 功能截图
+(部分功能)
+![微信图片_20260324154322_188_7](https://github.com/user-attachments/assets/2ccbb0b0-7174-48a1-abda-9bc313fdc48d)
 
-<img width="1823" height="905" alt="屏幕截图 2026-03-24 152639" src="https://github.com/user-attachments/assets/6610fbc0-fc8d-4177-afb6-59c86cdc6886" />
-
-<img width="1827" height="871" alt="屏幕截图 2026-03-24 152823" src="https://github.com/user-attachments/assets/d71c7fec-c50f-4356-a89d-b218ece61ed8" />
 
 
 ## 环境要求
