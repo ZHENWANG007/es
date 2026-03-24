@@ -42,6 +42,52 @@
 
 ![微信图片_20260324154322_188_7](https://github.com/user-attachments/assets/e9adc91d-3c58-4a82-bc3e-4375e1c004dd)
 
+
+---
+
+## 项目结构
+
+### 前端项目结构（ems-vue-main）
+```
+ems-vue-main/
+├── .vscode/           # VSCode 编辑器配置
+├── public/             # 静态资源目录（html、favicon等）
+├── src/                # 前端源码目录
+│   ├── api/            # 接口请求封装
+│   ├── assets/         # 静态资源（图片、样式等）
+│   ├── directives/     # 自定义指令
+│   ├── layout/         # 页面布局组件
+│   ├── request/        # HTTP 请求封装
+│   ├── router/         # 路由配置
+│   ├── stores/         # 状态管理
+│   ├── utils/          # 工具函数
+│   ├── views/          # 页面组件
+│   ├── App.vue         # 根组件
+│   └── main.js         # 入口文件
+└── .gitignore          # Git 忽略文件配置
+```
+
+### 后端项目结构（ems-master）
+```
+ems-master/
+├── .idea/              # IntelliJ IDEA 编辑器配置
+├── src/
+│   ├── main/
+│   │   ├── java/com/ems/
+│   │   │   ├── common/       # 公共工具类、常量等
+│   │   │   ├── controller/   # 控制层（接口入口）
+│   │   │   ├── domain/       # 实体类/数据模型
+│   │   │   ├── handler/      # 全局异常处理、拦截器等
+│   │   │   ├── mapper/       # 数据访问层（MyBatis Mapper）
+│   │   │   ├── service/      # 业务逻辑层
+│   │   │   └── EmployeeManagementSystemApplication.java  # 项目启动类
+│   │   └── resources/        # 配置文件、MyBatis映射等
+│   └── test/                 # 单元测试目录
+└── pom.xml               # Maven 项目配置文件
+```
+
+---
+
 ## 环境要求
 - JDK 8+
 - MySQL 5.7+/8.0+
