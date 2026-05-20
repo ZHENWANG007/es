@@ -8,7 +8,7 @@
 - 核心语言：Java
 - 开发框架：SpringBoot
 - 构建工具：Maven
-- 数据库：MySQL（9张核心业务表）
+- 数据库：MySQL
 - 缓存：Redis（提升系统性能）
 
 ### 前端技术
